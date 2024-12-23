@@ -3,10 +3,11 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
+const cors = require('cors');
 
 // Middleware
 app.use(bodyParser.json());
-
+app.use(cors());
 // MongoDB setup
 mongoose.connect('mongodb+srv://ante:anteante@cluster0.7xpar.mongodb.net/notifications?retryWrites=true&w=majority', {
   useNewUrlParser: true,
